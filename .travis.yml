@@ -1,9 +1,17 @@
+sudo: required
+
+services:
+  - docker
+
 language: node_js
 
 node_js:
   - "0.10"
   - "0.12"
   - "iojs"
+
+script:
+  - docker run -d -p 127.0.0.1:80:4567 --name eureka netflixoss/eureka:1.1.147
 
 after_script:
   - npm run coveralls
