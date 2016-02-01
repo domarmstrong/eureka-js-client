@@ -10,6 +10,10 @@ node_js:
   - "0.12"
   - "iojs"
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install lxc-docker
+
 before_script:
   - docker run -d --name eureka netflixoss/eureka:1.1.147
   - docker ps -a
