@@ -13,6 +13,8 @@ node_js:
 before_install:
   - docker run -d -p 8080:8080 --name eureka netflixoss/eureka:1.3.1
   - docker ps -a
+  - echo "waiting 2min"
+  - sleep 120
   - curl -L -v "http://localhost:8080/eureka/v2/apps"
 
 after_script:
