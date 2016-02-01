@@ -15,7 +15,7 @@ before_install:
   - docker ps -a
   - echo "waiting 60 seconds"
   - sleep 60
-  - curl -L -v "http://localhost:8080/eureka/v2/apps" -H "Accept: application/json"
+  - curl -L -v "http://localhost:8080/eureka/v2/apps" -H "Accept:application/json"
 
 after_script:
   - npm run coveralls
